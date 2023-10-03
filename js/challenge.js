@@ -2,6 +2,26 @@
 let counter = 0;
 const timerElement = document.getElementById("counter");
 
+/**
+ * Increments a counter variable and updates the text content of a timer element.
+ *
+ * @returns {void}
+ *
+ * @example
+ * // HTML
+ * <div id="counter">0</div>
+ *
+ * // JavaScript
+ * let counter = 0;
+ * const timerElement = document.getElementById("counter");
+ *
+ * function incrementTimer() {
+ *   counter++;
+ *   timerElement.textContent = counter;
+ * }
+ *
+ * setInterval(incrementTimer, 1000);
+ */
 function incrementTimer() {
   counter++;
   timerElement.textContent = counter;
@@ -35,13 +55,13 @@ likeButton.addEventListener("click", () => {
     likeCount[counter]++;
   }
 
-  const existingLike = likeList.querySelector(li[data-num="${counter}"]);
+  const existingLike = likeList.querySelector(li[data-num]=["${counter}"]);
   if (existingLike) {
-    existingLike.textContent = ${counter} has been liked ${likeCount[counter]} times;
+    existingLike.textContent =` ${counter} has been liked ${likeCount[counter]} times`;
   } else {
     const likeItem = document.createElement("li");
     likeItem.dataset.num = counter;
-    likeItem.textContent = ${counter} has been liked ${likeCount[counter]} times;
+    likeItem.textContent =` ${counter} has been liked ${likeCount[counter]} times`;
     likeList.appendChild(likeItem);
   }
 });
